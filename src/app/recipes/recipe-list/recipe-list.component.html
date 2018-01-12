@@ -1,1 +1,7 @@
-<app-recipe-list-item></app-recipe-list-item>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+
+<app-recipe-list-item [recipe]="recipe" *ngFor="let recipe of recipes"></app-recipe-list-item>

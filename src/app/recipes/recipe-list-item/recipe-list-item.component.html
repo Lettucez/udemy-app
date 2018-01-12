@@ -1,3 +1,15 @@
-<p>
-  recipe-list-item works!
-</p>
+<div class="row my-2">
+    <div class="col">
+        <div class="list-group">
+            <a href="#" class="list-group-item clearfix">
+                <div class="float-left">
+                    <h4 class="">{{ recipe.name }}</h4>
+                    <p class="">{{ recipe.description }}</p>
+                </div>
+                <div style="width:200px" class="float-right">
+                    <img class="img-fluid" [src]="recipe.imagePath" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
