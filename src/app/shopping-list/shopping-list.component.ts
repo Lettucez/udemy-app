@@ -16,4 +16,12 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients = mockIngredients;
   }
 
+  addIngredient(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
+
+  onClearList() {
+    this.ingredients = [];
+  }
+
 }
