@@ -11,6 +11,8 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeListItemComponent } from './recipes/recipe-list-item/recipe-list-item.component';
 import { RecipeInformationComponent } from './recipes/recipe-information/recipe-information.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeService } from './recipes/recipe.service';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { RecipesComponent } from './recipes/recipes.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

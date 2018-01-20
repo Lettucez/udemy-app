@@ -4,7 +4,7 @@ export class Recipe {
     imagePath: string;
 }
 
-export const mockRecipes: Recipe[] = [{
+export const MockRecipes: Recipe[] = [{
     name: "Fudge",
     description: "This recipe creates Fudge",
     imagePath: "https://cdn.cpnscdn.com/static.coupons.com/ext/kitchme/images/recipes/600x400/old-fashioned-chocolate-fudge-recipe_17271.jpg"
