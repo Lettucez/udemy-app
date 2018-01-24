@@ -8,12 +8,12 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" (click)="showRecipes()" (click)="isRecipesActive = true; isShoppingActive = false" [class.active]="isRecipesActive === true" href="#">Recipes
+      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Recipes
         <span class="sr-only">(current)</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="showShoppingList()" (click)="isShoppingActive = true; isRecipesActive = false;" [class.active]="isShoppingActive === true" href="#">Shopping List</a>
+      <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
     </li>
     </ul>
     <ul class="navbar-nav mr-5">
