@@ -12,15 +12,15 @@ export class RecipeService {
     constructor(private shoppingListService: ShoppingListService) {
     }
 
-    selectRecipe() {
+    selectRecipe(): EventEmitter<Recipe> {
         return this.recipeSelected;
     }
 
-    getRecipes() {
+    getRecipes(): Recipe[] {
         return this.recipes.slice();
     }
 
-    addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    addIngredientsToShoppingList(ingredients: Ingredient[]): void {
         this.shoppingListService.addIngredients(ingredients);
     }
 }
