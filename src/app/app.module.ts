@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,10 +14,11 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 
-const routes: Routes = [
-  { path: "", component: RecipesComponent },
-  { path: "shopping-list", component: ShoppingListComponent }
-];
+import { AppRoutingModule } from './/app-routing.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,12 +29,14 @@ const routes: Routes = [
     RecipeListComponent,
     RecipeListItemComponent,
     RecipeInformationComponent,
-    RecipesComponent
+    RecipesComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]

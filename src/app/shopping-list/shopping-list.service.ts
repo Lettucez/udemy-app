@@ -1,9 +1,11 @@
-import { Injectable, EventEmitter } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Ingredient, mockIngredients } from "../shared/ingredient.model";
+import { Subject } from "rxjs/Subject";
 
 @Injectable()
 export class ShoppingListService {
-    ingredientsChanged = new EventEmitter<Ingredient[]>();
+    // ingredientsChanged = new EventEmitter<Ingredient[]>();
+    ingredientsChanged = new Subject<Ingredient[]>();
     ingredients: Ingredient[] = mockIngredients;
 
     getIngredients() {
@@ -18,7 +20,7 @@ export class ShoppingListService {
 
     onClearList() {
         this.ingredients = [];
-        this.ingredientsChanged.emit(this.ingredients);
+        this.ingredientsChanged.next(this.ingredients);
         // this.ingredientsChanged.emit(this.ingredients.slice());
       }
 
