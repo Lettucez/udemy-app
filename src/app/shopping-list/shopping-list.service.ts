@@ -6,6 +6,7 @@ import { Subject } from "rxjs/Subject";
 export class ShoppingListService {
     // ingredientsChanged = new EventEmitter<Ingredient[]>();
     ingredientsChanged = new Subject<Ingredient[]>();
+    startedEditing = new Subject<number>();
     ingredients: Ingredient[] = mockIngredients;
 
     getIngredients() {
@@ -18,14 +19,22 @@ export class ShoppingListService {
         // this.ingredientsChanged.emit(this.ingredients.slice());
     }
 
-    onClearList() {
-        this.ingredients = [];
+    updateIngredient(index: number, newIngredient: Ingredient) {
+        this.ingredients[index] = newIngredient;
         this.ingredientsChanged.next(this.ingredients);
-        // this.ingredientsChanged.emit(this.ingredients.slice());
-      }
+    }
 
-      addIngredients(ingredients: Ingredient[]) {
+    getIngredient(index: number) {
+        return this.ingredients[index];
+    }
+
+    deleteIngredient(index: number) {
+        this.ingredients.splice(index, 1);
+        this.ingredientsChanged.next(this.ingredients);
+    }
+
+    addIngredients(ingredients: Ingredient[]) {
         this.ingredients.push(...ingredients);
         // this.ingredientsChanged.emit(this.ingredients.slice());
-      }
+    }
 }
