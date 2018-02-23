@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataStorageService } from '../data-storage/data-storage.service';
+import { DataStorageService } from '../../data-storage/data-storage.service';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
