@@ -20,10 +20,9 @@ export class DataStorageService {
   getRecipes() {
     const token = this.authService.getToken();
      
-    return this.http.get("https://udemy-app-b9c87.firebaseio.com/recipes.json?auth=" + token)
+    return this.http.get<Recipe[]>("https://udemy-app-b9c87.firebaseio.com/recipes.json?auth=" + token)
       .map(
-        (response: Recipe[]) => {
-          const recipes = response;
+        (recipes) => {
           for (let recipe of recipes) {
             if (!recipe['ingredients']) {
               recipe['ingredients'] = [];
